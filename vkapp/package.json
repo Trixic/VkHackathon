@@ -1,0 +1,28 @@
+{
+  "name": "vkapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://functionappog.blob.core.windows.net/vkdonor",
+  "scripts": {
+    "start": "cross-env PORT=10888 react-scripts start",
+    "build": "react-scripts build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "react-hot-loader": "^4.3.4",
+    "react-scripts": "^1.1.4"
+  },
+  "dependencies": {
+    "@vkontakte/icons": "^1.2.1",
+    "@vkontakte/vkui": "^2.13.0",
+    "@vkontakte/vkui-connect": "^1.1.2",
+    "core-js": "^2.5.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  }
+}
