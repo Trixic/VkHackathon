@@ -11,6 +11,10 @@ export default function reduce(state = initialState, action = {}) {
             return state.merge({
                 accessToken: action.accessToken
             });
+        case types.VK_GET_INFO_FETCHED:
+            return state.merge({
+                fetchedUser: action.accessToken
+            });
         case types.VK_NOTIFICATION_STATUS_FETCHED:
             return state.merge({
                 notificationStatus: action.notificationStatus

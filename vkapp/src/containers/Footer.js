@@ -12,9 +12,9 @@ class Footer extends Component {
         return (
             <UI.Div className="footer">
                 <UI.Button level="3" component="a"
-                           href="https://vk.me/currency_app" before={<Icon24Message/>}/>
+                           href="https://vk.me/club155441895" before={<Icon24Message/>}/>
                 <UI.Button level="3" component="a"
-                           href="https://vk.com/currency_app">Группа</UI.Button>
+                           href="https://vk.com/club155441895">Группа</UI.Button>
                 <UI.Button level="3" component="a" onClick={this.openAbout.bind(this)}>О
                     программе</UI.Button>
             </UI.Div>

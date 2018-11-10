@@ -35,6 +35,16 @@ export function allowNotifications() {
     }
 }
 
+export function sendMessage(message, userId, accessToken) {
+    
+
+    return async (dispatch) => {
+        apiRequest('messages.send', {"user_ids": userId, "v":"5.87", "access_token":accessToken, "message":"123"}, accessToken, error => {
+            dispatch({type: types.VK_NOTIFICATION_STATUS_FAILED, error: error});
+        });
+    }
+}
+
 export function initApp() {
     return async (dispatch) => {
         VKConnect.subscribe(e => {
@@ -76,12 +86,21 @@ export function initApp() {
                     });
                     break;
 
+                 case 'VKWebAppGetUserInfoResult':
+                    dispatch({
+                        type: types.VK_GET_INFO_FETCHED,
+                        fetchedUser: data
+                    });
+                    break;
+
+
                 default:
                 //nop;
             }
         });
 
         VKConnect.send('VKWebAppInit', {'no_toolbar': true});
+        VKConnect.send('VKWebAppGetUserInfo', {});
     }
 }
 

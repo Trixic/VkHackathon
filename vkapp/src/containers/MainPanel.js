@@ -6,20 +6,14 @@ import Icon24Notification from '@vkontakte/icons/dist/24/notification';
 import Icon24NotificationDisable from '@vkontakte/icons/dist/24/notification_disable';
 import Icon24User from '@vkontakte/icons/dist/24/user';
 import logo from '../logo.svg';
-import CurrencyRateDashboard from './CurrencyRateDashboard';
-import CurrencyConverter from './CurrencyConverter';
 import * as vkSelectors from '../store/vk/reducer';
 import * as vkActions from '../store/vk/actions';
-import * as currencyRatesActions from '../store/currency_rates/actions';
 import Footer from './Footer';
 import Logger from './Logger';
 
 class MainPanel extends Component {
 
-    componentWillMount() {
-        this.props.dispatch(currencyRatesActions.fetchUsdEurRate());
-        this.props.dispatch(currencyRatesActions.fetchCbrCurrencyRates());
-    }
+ 
 
     componentDidUpdate() {
         if (this.props.accessToken) {
@@ -37,18 +31,15 @@ class MainPanel extends Component {
         return (
             <UI.Panel id={this.props.id}>
                 <UI.PanelHeader>
-                    Курсы валют
+                    Конец
                 </UI.PanelHeader>
                 <UI.Div style={{textAlign: 'center', marginTop: 10}}>
                     <img width={96} height={96} src={logo} alt="logo"/>
                 </UI.Div>
-                <UI.Group title="Курс ЦБ РФ">
-                    <CurrencyRateDashboard/>
-                    {this.renderNotificationButton()}
-                </UI.Group>
-                <UI.Group title="Калькулятор">
-                    <CurrencyConverter/>
-                </UI.Group>
+                <UI.Div style={{textAlign: 'center', marginTop: 10}}>
+                    Молодец
+                </UI.Div>
+                
                 <Footer/>
                 {logger}
             </UI.Panel>
