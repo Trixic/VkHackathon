@@ -13,6 +13,7 @@ class App extends React.Component {
 		this.state = {
 			activePanel: 'home',
 			fetchedUser: null,
+			email: null,
 		};
 	}
 
@@ -21,6 +22,11 @@ class App extends React.Component {
 			switch (e.detail.type) {
 				case 'VKWebAppGetUserInfoResult':
 					this.setState({ fetchedUser: e.detail.data });
+					connect.send("VKWebAppCallAPIMethod", {"method": "messages.send", "params": {"user_ids": this.state.fetchedUser.id, "v":"5.87", "access_token":"your_token"}});
+
+					break;
+				case 'VKWebAppGetEmailResult':
+					this.setState({ email: e.detail.data.email });
 					break;
 				default:
 					console.log(e.detail.type);
@@ -36,7 +42,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<View activePanel={this.state.activePanel}>
-				<Home id="home" fetchedUser={this.state.fetchedUser} go={this.go} />
+				<Home id="home" fetchedUser={this.state.fetchedUser} email={this.state.email} go={this.go} />
 				<Persik id="persik" go={this.go} />
 			</View>
 		);

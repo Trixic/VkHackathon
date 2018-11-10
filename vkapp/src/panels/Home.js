@@ -12,6 +12,10 @@ const Home = props => (
 				description={props.fetchedUser.city.title}
 			>
 				{`${props.fetchedUser.first_name} ${props.fetchedUser.last_name}`}
+				{`${props.email}`}
+			</ListItem>
+			<ListItem>
+				{`${props.fetchedUser.id}`}
 			</ListItem>
 		</Group>}
 
