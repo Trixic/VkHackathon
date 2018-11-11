@@ -29,21 +29,19 @@ class IntroPanel extends Component {
         return (
             <UI.Panel id={this.props.id}>
                 <UI.PanelHeader>
-                    Привет
+                    Донор жизни
                 </UI.PanelHeader>
                 <UI.Div style={{textAlign: 'center', marginTop: 10}}>
                     <img width={96} height={96} src={logo} alt="logo"/>
                 </UI.Div>
                 <UI.Div style={{textAlign: 'center', marginTop: 10}}>
-                    Сейчас ты сдашь кровь!
+                    Донор жизни - это социальный проект, который помогает легко делать добро
                 </UI.Div>
                 <UI.Button
-                    before={<Icon24User/>}
                     level='1'
                     size="xl"
                     onClick={this.props.go} data-to="bloodTypePanel"
-                >Начать</UI.Button>
-                <Footer/>
+                >Записаться</UI.Button>
                 {logger}
             </UI.Panel>
         );

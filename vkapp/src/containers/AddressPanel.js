@@ -35,33 +35,31 @@ class AddressPanel extends Component {
                     <img width={96} height={96} src={logo} alt="logo"/>
                 </UI.Div>
                 <UI.Div>
-                    <UI.List >
-                        <UI.Cell
-                            before={<UI.Avatar size={72} src="https://pp.userapi.com/c841034/v841034569/3b8c1/pt3sOw_qhfg.jpg" />}
-                            size="l"
-                            description="адрес, 400м"
-                            //asideContent={<UI.Icon24MoreHorizontal />}
-                            bottomContent={
-                                <div style={{ display: 'flex' }}>
-                                    <UI.Button size="m">Выбрать</UI.Button>
-                                    <UI.Button size="m" level="secondary" style={{ marginLeft: 8 }}>Еее</UI.Button>
-                                </div>
-                            }
-                        >
-                            Больница номер 1</UI.Cell>
-                    </UI.List>
+                 
+                        <UI.Div>
+                            <UI.Select placeholder="Выберите дату">
+                            <option value="8">Не важно</option>
+                                <option value="1">12 ноября 2018</option>
+                                <option value="2">13 ноября 2018</option>
+                                <option value="3">14 ноября 2018</option>
+                                <option value="4">15 ноября 2018</option>
+                                <option value="5">16 ноября 2018</option>
+                                <option value="6">17 ноября 2018</option>
+                                <option value="7">18 ноября 2018</option>
+                                <option value="8">19 ноября 2018</option>
+                            </UI.Select>
+                        </UI.Div>
+                        
                 </UI.Div>
                 <UI.Div>
 
                     <UI.Button
-                        before={<Icon24User />}
                         level='1'
                         size="xl"
                         onClick={this.props.go} data-to="mainPanel"
                     >Подтвердить</UI.Button>
                 </UI.Div>
 
-                <Footer/>
                 {logger}
             </UI.Panel>
         );

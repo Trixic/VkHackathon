@@ -36,21 +36,26 @@ class BloodTypePanel extends Component {
                 </UI.Div>
                 <UI.Div>
                     <UI.Select placeholder="Выберите тип крови">
-                        <option value="1">1 группа</option>
-                        <option value="2">2 группа</option>
+                        <option value="1">1+</option>
+                        <option value="2">1-</option>
+                        <option value="3">2+</option>
+                        <option value="4">2-</option>
+                        <option value="5">3+</option>
+                        <option value="6">3-</option>
+                        <option value="7">4+</option>
+                        <option value="8">4-</option>
+                        <option value="8">Я не знаю свою группу крови</option>
                     </UI.Select>
                 </UI.Div>
                 <UI.Div>
 
                     <UI.Button
-                        before={<Icon24User />}
                         level='1'
                         size="xl"
                         onClick={this.props.go} data-to="addressPanel"
                     >Подтвердить</UI.Button>
                 </UI.Div>
 
-                <Footer/>
                 {logger}
             </UI.Panel>
         );

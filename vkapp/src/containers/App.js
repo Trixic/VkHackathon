@@ -9,6 +9,7 @@ import AboutPanel from './AboutPanel';
 import MainPanel from './MainPanel';
 import BloodTypePanel from './BloodTypePanel';
 import IntroPanel from './IntroPanel';
+import FinalPanel from './FinalPanel';
 import AddressPanel from './AddressPanel';
 
 class App extends Component {
@@ -42,6 +43,7 @@ class App extends Component {
                         <BloodTypePanel id="bloodTypePanel" accessToken={this.props.accessToken} go={this.go}/>
                         <AddressPanel id="addressPanel" accessToken={this.props.accessToken} go={this.go}/>
                         <MainPanel id="mainPanel" accessToken={this.props.accessToken} go={this.go}/>
+                        <FinalPanel id="finalPanel" accessToken={this.props.accessToken} go={this.go}/>
                         <AboutPanel id="aboutPanel"/>
                     </UI.View>
                 </UI.Root>

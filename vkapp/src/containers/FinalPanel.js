@@ -11,7 +11,7 @@ import * as vkActions from '../store/vk/actions';
 import Footer from './Footer';
 import Logger from './Logger';
 
-class MainPanel extends Component {
+class FinalPanel extends Component {
 
  
 
@@ -37,20 +37,13 @@ class MainPanel extends Component {
                     <img width={96} height={96} src={logo} alt="logo"/>
                 </UI.Div>
                 <UI.Div style={{textAlign: 'center', marginTop: 10}}>
-                Поздравляю! 
-    Вы подали заявку на сдачу крови. 
-    В ближайшее время наш бот "Донор жизни" вышлет Вам в личные сообщения информационное письмо, где будет подтверждение от ближайшего центра крови о готовности принять Вас. 
-    Спасибо, что помогаете спасать жизни людей! 
+                Важно!<br/>
+                За два дня до сдачи крови не рекомендуется употреблять в пищу жареное, жирное, острое и копченое, а также молочные продукты, яйца, шоколод, орехи.<br/>
+                Рекомендуем пить сладкий чай с вареньем, соки, морс. Можно есть хлеб, сухари, отварные крупы, макароны на воде без масла.<br/>
+                За 48 часов до визита в учреждение службы крови нельзя употреблять алкоголь, а за 72 часов - принимать лекарства, содержащие аспирин и анальгетики. <br/>
+                За час до процедуры воздержаться от курения.
                 </UI.Div>
-                <UI.Div>
-
-                    <UI.Button
-                        level='1'
-                        size="xl"
-                        onClick={this.props.go} data-to="finalPanel"
-                    >Далее</UI.Button>
-                </UI.Div>
-                
+               
                 {logger}
             </UI.Panel>
         );
@@ -102,4 +95,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(MainPanel);
+export default connect(mapStateToProps)(FinalPanel);
