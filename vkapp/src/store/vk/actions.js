@@ -6,7 +6,7 @@ const API_VERSION = '5.80';
 export function fetchAccessToken() {
     return async () => {
         let appId = process.env.NODE_ENV === 'production' ? 6747235 : 6747235;
-        VKConnect.send('VKWebAppGetAuthToken', {'app_id': appId});
+        VKConnect.send('VKWebAppGetAuthToken', {'app_id': appId });
     }
 }
 
@@ -35,11 +35,17 @@ export function allowNotifications() {
     }
 }
 
+export function allow() {
+    return async () => {
+        VKConnect.send('VKWebAppAllowNotifications', {});
+    }
+}
+
 export function sendMessage(message, userId, accessToken) {
     
 
     return async (dispatch) => {
-        apiRequest('messages.send', {"user_ids": userId, "v":"5.87", "access_token":accessToken, "message":"123"}, accessToken, error => {
+        apiRequest('messages.send', {"user_ids": userId, "v":"5.87", "access_token":accessToken, "message":message}, accessToken, error => {
             dispatch({type: types.VK_NOTIFICATION_STATUS_FAILED, error: error});
         });
     }

@@ -10,6 +10,9 @@ import * as vkSelectors from '../store/vk/reducer';
 import * as vkActions from '../store/vk/actions';
 import Footer from './Footer';
 import Logger from './Logger';
+import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
+import Icon24Back from '@vkontakte/icons/dist/24/back';
+const osname = UI.platform();
 
 class MainPanel extends Component {
 
@@ -30,7 +33,9 @@ class MainPanel extends Component {
 
         return (
             <UI.Panel id={this.props.id}>
-                <UI.PanelHeader>
+                <UI.PanelHeader left={<UI.HeaderButton onClick={this.props.go} data-to="bloodTypePanel">
+				{osname === UI.IOS ? <Icon28ChevronBack /> : <Icon24Back />}
+			</UI.HeaderButton>}>
                     Донор жизни
                 </UI.PanelHeader>
                 <UI.Div style={{textAlign: 'center', marginTop: 10}}>
